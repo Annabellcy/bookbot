@@ -10,3 +10,13 @@ def get_character_num(contents):
             char_dic[char] = 0
         char_dic[char] += 1
     return char_dic
+
+def count_dic(char_dic):
+    result = []
+    for ch, count in char_dic.items():
+        result.append({"char": ch, "num": count})
+
+    def sort_on(items):
+        return items["num"]
+    result.sort(reverse=True, key=sort_on)
+    return result
